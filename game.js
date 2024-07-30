@@ -66,7 +66,8 @@ function getCPUMove() {
 }
 
 function processMove(cmd, cpu) {
-  // Your code here
+  console.log(`You pick ${cmd}, computer picks ${cpu}.`);
+  getWinner(cmd,cpu)
 }
 
 /******************************* MAIN FUNCTION *******************************/
@@ -82,8 +83,7 @@ function promptInput(rl) {
       return;
     } else if (VALID_MOVES[cmd]){
       const cpuMove = getCPUMove()
-      console.log(`You pick ${cmd}, computer picks ${cpuMove}.`);
-      getWinner(cmd,cpuMove)
+      processMove(cmd, cpuMove)
 
     promptInput(rl);
   }});
